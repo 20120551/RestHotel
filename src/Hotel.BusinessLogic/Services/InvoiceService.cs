@@ -163,7 +163,7 @@ internal class InvoiceService : IInvoiceService
 
             foreach (Guest guest in card.Guests)
             {
-                if (guest.Type == "foreign")
+                if (guest.Type == "foreigner")
                 {
                     hasForeign = true;
                     break;
