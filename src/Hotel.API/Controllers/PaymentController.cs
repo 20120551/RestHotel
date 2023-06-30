@@ -34,7 +34,7 @@ public class PaymentController : ControllerBase
     public async Task<ActionResult> Get(string paymentId)
     {
         var isCompleted = await _paymentService.GetPaymentStatus(paymentId);
-        return Ok(new { isCompleted = isCompleted, paymentId = paymentId, Timeout = 10 });
+        return Ok(new { isCompleted = isCompleted, paymentId = paymentId, Timeout = 2 });
     }
     [HttpPost("{invoiceId}")]
     public async Task<ActionResult> Create(int invoiceId, CreatePaymentDto payment)
