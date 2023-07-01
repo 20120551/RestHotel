@@ -40,12 +40,10 @@ public class ServiceController : ControllerBase
     }
 
     [Authorize(Roles = "manager")]
-    [HttpDelete("")]
+    [HttpDelete("{serviceId}")]
     public async Task<ActionResult> RemoveService(int serviceId)
     {
         await _hotelServicesService.RemoveServiceAsync(serviceId);
         return Ok($"Removed service #{serviceId}.");
     }
-
-
 }
